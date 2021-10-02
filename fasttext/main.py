@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from starlette.responses import RedirectResponse
 
-from languagedetection import LanguageIdentification
+from languagedetection import LanguageDetection
 
 import json
 import logging
@@ -14,7 +14,7 @@ logging.basicConfig(format='%(asctime)s - %(message)s',
 app = FastAPI()
 
 # load model
-langdetect = LanguageIdentification()
+langdetect = LanguageDetection()
 
 @app.get("/")
 def root():

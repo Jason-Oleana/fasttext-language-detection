@@ -5,7 +5,7 @@ logging.basicConfig(format='%(asctime)s - %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',
                     level=logging.INFO)
 
-class LanguageIdentification:
+class LanguageDetection:
 
     def __init__(self):
         # path to pretrained model
