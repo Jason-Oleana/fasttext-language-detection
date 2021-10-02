@@ -1,0 +1,15 @@
+version: '3.0'
+
+services:
+  languagedetection:
+      image: fasttext/languagedetection
+      build:
+          context: .
+          dockerfile: fasttext/Dockerfile
+      volumes:
+          - ./fasttext/models:/app/models
+          - ./fasttext:/app/
+      command:
+          uvicorn main:app --host 0.0.0.0 --port 9000 --reload --reload-dir /app
+      ports:
+          - 9000:9000
